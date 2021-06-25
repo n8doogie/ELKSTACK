@@ -100,7 +100,7 @@ We have installed the following Beats on these machines:
 - FileBeat
 - MetricBeat
 
-These Beats allow us to collect the following information from each machine:
+These Beats allow us to collect the following information from each machine and monitor them within the Kibana suite:
 - FileBeat allows for the collection and analysis of Log Data within selected regions of the virtual machines. It can provide users with the ability to monitor changes to log files. 
 
 - EXAMPLE: (Syslog events by hostname [Filebeat System] ECS)
