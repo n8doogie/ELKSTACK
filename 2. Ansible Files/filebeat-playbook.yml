@@ -1,0 +1,37 @@
+---
+- name: Install Filebeat and Copy the FileBeat config file to WEBVM boxes.
+  hosts: webservers
+  remote_user: ansible
+  become: true
+  tasks:
+    # Download the deb file from artifacts.elastic.co
+    - name: Download deb files from artifacts.elastic.co
+      command: curl -L -O http://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
+
+    # Install the deb file usibf the dpkg command
+    - name: Install deb using dpkg
+      command: dpkg -i filebeat-7.4.0-amd64.deb
+
+    # Copy FileBeat config from your Ansible container to WebVM
+    - name: Copy FileBeat config to FileBeat yml file
+      copy:
+        src: /etc/ansible/files/filebeat-config.yml
+        dest: /etc/filebeat/filebeat.yml
+
+    # Enable FileBeat system modules
+    - name: enable and configure system modules
+      command: filebeat modules enable system
+
+    # Setup FileBeat
+    - name: setting up filebeat
+      command: filebeat setup
+
+    # Start up FileBeat
+    - name: starting filebeat
+      command: service filebeat start
+
+    # Enable FileBeat on system startup
+    - name: enabling filebeat services on boot
+      systemd:
+        name: filebeat
+        enabled: yes
