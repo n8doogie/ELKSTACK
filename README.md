@@ -12,6 +12,10 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 https://github.com/n8doogie/ELKSTACK/blob/main/2.%20Ansible%20Files/install-elk.yml
 
+https://github.com/n8doogie/ELKSTACK/blob/main/2.%20Ansible%20Files/filebeat-playbook.yml
+
+https://github.com/n8doogie/ELKSTACK/blob/main/2.%20Ansible%20Files/metricbeat-playbook.yml
+
 This document contains the following details:
 - Description of the Topology
 - Access Policies
