@@ -57,7 +57,7 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump Box machine can accept connections from the Internet. 
 Access to this machine is only allowed from the following IP address:
-- PRIVATE HOME SYSTEM IP ADDRESS
+- HOME SYSTEM IP ADDRESS
 
 Machines within the network can only be accessed by The Jump Box (through an ansible container).
 - The Jump Box VM is able to access the ELK VM VIA ssh'ing in through an ansible container. 
